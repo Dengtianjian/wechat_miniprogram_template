@@ -1,0 +1,25 @@
+<!-- components/base/navbar/navbar.wxml -->
+<view class="bar" style="position:{{ fixed?'fixed':'relative' }};z-index:{{ zIndex }};color:{{styleColorValue}};background:{{ backBackground }};">
+  <view class="bar-body">
+    <view class="status-bar" style="height:{{ statusBarHeight }}px;">
+      <slot name="status-bar" />
+    </view>
+    <view class="navbar" style="grid-template-columns:{{ menuWidth }}px auto {{ menuWidth }}px;padding:0 {{ padding }}px;height:{{ navbarHeight }}px;">
+      <view class="navbar-left">
+        <slot name="left" />
+        <view class="navbar-page-route">
+          <view wx:if="{{ pages.length>1 }}" bindtap="back" class="shoutao st-back"></view>
+          <view wx:if="{{ !isHomePage }}" bindtap="home" class="shoutao st-homefill"></view>
+        </view>
+      </view>
+      <view class="navbar-body">
+        <slot />
+      </view>
+      <view class="navbar-menu">
+        <slot name="menu" />
+      </view>
+    </view>
+  </view>
+  <view class="bar-background" style="{{ styleString }}"></view>
+</view>
+<view class="bar-placeholder" wx:if="{{ fixed }}" style="z-index:{{ zIndex-1 }};height:{{ barHeight }}px"></view>
