@@ -1,0 +1,19 @@
+/* components/base/Form/TFormItem/TFormItem.wxss */
+.t-form-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+}
+
+.t-form-item:not(:last-child) {
+  margin-bottom: 30rpx;
+}
+
+.t-form-item_fill {
+  min-height: 84rpx;
+  background-color: #f0f0f0;
+  border-radius: var(--radius-angle);
+}

@@ -6,7 +6,7 @@ interface IConfig {
 }
 
 const base: IConfig = {
-  APIURL: "http://127.0.0.2",
+  APIURL: "http://127.0.0.20",
   DiscuzXPluginId: "gstudio_super_app"
 }
 

@@ -1,17 +1,26 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/group/index/index"
+    "pages/group/index/index",
+    "pages/member/signin/index/index",
+    "pages/member/signin/account/index",
+    "pages/member/signin/bind/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
+  },
+  "usingComponents": {
+    "t-navbar": "./components/base/TNavbar/TNavbar",
+    "t-common-container": "./components/base/TCommonContainer/TCommonContainer",
+    "t-button": "./components/base/TButton/TButton"
   }
 }

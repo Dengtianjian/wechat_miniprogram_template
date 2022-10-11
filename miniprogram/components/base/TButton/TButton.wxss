@@ -1,0 +1,8 @@
+.t-button-block {
+  display: block;
+  width: 100% !important;
+}
+
+.c-button-radius {
+  border-radius: 80rpx;
+}

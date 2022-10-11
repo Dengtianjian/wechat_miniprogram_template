@@ -1,3 +1,4 @@
 /**app.wxss**/
 @import "./assets/wxss/iconfont/antdv.wxss";
 @import "./assets/wxss/iconfont/shoutao.wxss";
+@import "./assets/wxss/common.wxss";

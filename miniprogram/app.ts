@@ -1,6 +1,10 @@
 // app.ts
 App<IAppOption>({
-  globalData: {},
+  globalData: {
+    System: {
+      CustomNavbarHeight: 0
+    }
+  },
   onLaunch() {
 
   },

@@ -1,0 +1,4 @@
+<!-- components/base/Form/TFormItem/TFormItem.wxml -->
+<view class="t-form-item t-form-item_{{ style }}">
+  <slot />
+</view>

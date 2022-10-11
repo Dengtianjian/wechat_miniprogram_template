@@ -17,11 +17,12 @@ class Request {
 
   #joinUrl(uri: string | string[]): string {
     uri = Array.isArray(uri) ? uri : [uri];
-    return [this.#baseUrl, this.#prefix, ...uri].filter(item => item.trim()).join("/");
+
+    return [this.#prefix, ...uri].filter(item => item.trim()).join("/");
   }
 
   static genAttachmentUrl(fileId: string): string {
-    return config.APIURL + "/downloadAttachment?fileId=" + encodeURI(fileId);
+    return config.APIURL + "downloadAttachment?fileId=" + encodeURI(fileId);
   }
 
   pipes(pipeName: string | string[]): Request {
@@ -65,7 +66,7 @@ class Request {
     }
 
     //@ts-ignore ：忽略78行导致的错误 //* 错误需要返回整个响应体
-    return http<ResponseData>(this.#joinUrl(uri), method, query, body, headers).then(res => {
+    return http<ResponseData>(this.#baseUrl + this.#joinUrl(uri), method, query, body, headers).then(res => {
       this.#tokenHandle(res.headers);
 
       if (res.result) {

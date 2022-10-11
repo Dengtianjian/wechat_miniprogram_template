@@ -1,4 +1,9 @@
+import EventBus from "../../../foundation/EventBus";
 import Helper from "../../../foundation/Helper"
+
+const A = getApp();
+
+const dis = EventBus.distribute("CustomNavbar");
 
 // components/base/navbar/navbar.ts
 Component<{
@@ -60,6 +65,10 @@ Component<{
   back: () => void
   home: () => void
 }>({
+  options: {
+    addGlobalClass: true,
+    multipleSlots: true
+  },
   lifetimes: {
     attached() {
       const Pages = getCurrentPages();
@@ -97,6 +106,10 @@ Component<{
           this.setData({
             barHeight: res.height
           });
+          A.globalData.System.CustomNavbarHeight = res.height;
+          dis.complete({
+            height: res.height
+          });
         }).exec();
       });
     },
@@ -119,7 +132,7 @@ Component<{
     },
     backBackground: {
       type: String,
-      value: "transparent"
+      value: "white"
     },
     frontBackground: {
       type: String,
@@ -143,16 +156,12 @@ Component<{
     },
     fixed: {
       type: Boolean,
-      value: false
+      value: true
     },
     zIndex: {
       type: Number,
       value: 1
     }
-  },
-
-  options: {
-    multipleSlots: true
   },
 
   /**

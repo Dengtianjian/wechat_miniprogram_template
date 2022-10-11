@@ -1,0 +1,10 @@
+page {
+  --container-padding: 38rpx;
+
+  --radius-angle: 10rpx;
+}
+
+.common-container {
+  padding: 0 var(--container-padding);
+  box-sizing: border-box;
+}

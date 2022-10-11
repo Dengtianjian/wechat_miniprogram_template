@@ -64,6 +64,7 @@ function http<ResponseData = any>(url: string, method: TMethods, query: Record<s
       url,
       method,
       header: headers,
+      data: body,
       // @ts-ignore
       success({ data, statusCode, header, cookies, profile }) {
         let responseBody: IResponse<ResponseData> = {
